@@ -3,10 +3,10 @@ package agregacion_composicion;
 
 
 public class Motor {
-    private int potencia;
+    private double potencia;
     private Eje eje_motor;
 
-    public int getPotencia() {
+    public double getPotencia() {
         return potencia;
     }
     public Eje getEje_motor() {
@@ -17,6 +17,11 @@ public class Motor {
         this.potencia = potencia;
     }
     public void setEje_motor(Eje eje_motor) {
+        this.eje_motor = eje_motor;
+    }
+
+    public Motor(double potencia, Eje eje_motor) {
+        this.potencia = potencia;
         this.eje_motor = eje_motor;
     }
 

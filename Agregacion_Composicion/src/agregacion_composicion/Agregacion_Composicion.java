@@ -16,6 +16,7 @@ public class Agregacion_Composicion {
         Scanner lectura=new Scanner(System.in);
         System.out.println("Marca de llantas:");
        String marca_llantas=lectura.next();
+       
        System.out.println("Diametro de llantas:");
        double diametro_llantas=lectura.nextDouble();
        Llanta [][] llantas = new Llanta [2][2];
@@ -31,10 +32,15 @@ public class Agregacion_Composicion {
      for(int i=0; i<2 ; i++){
          ejes_llantas[i]= new Eje (marca_eje_llantas);
     }
+     
      System.out.println("Marca de eje de motor:");
        String marca_eje_motor=lectura.next();
      Eje eje_motor=new Eje (marca_eje_motor);
-       
+     
+     System.out.println("Potencia de motor:");
+       double potencia=lectura.nextDouble();
+    
+     
     for(int i =0; i<2;i++){
         ejes_llantas[i].setllantas(llantas[i]);
     }
@@ -43,8 +49,10 @@ public class Agregacion_Composicion {
        System.out.println("Placa:");
        String placa=lectura.next();
  
-    Carro carro1= new Carro (placa,marca_carro,llantas,ejes_llantas);
-    
+    Carro carro1= new Carro (placa,marca_carro,llantas,ejes_llantas,potencia,eje_motor);
+    eje_motor.setmotor(carro1.getMotor());
+       
+    carro1.mostrarCarro();
    
     
     }
